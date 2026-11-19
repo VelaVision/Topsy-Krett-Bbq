@@ -43,7 +43,7 @@ function showStatus(message, type) {
 
 // Fade elements up into view as you scroll down to them
 const revealTargets = document.querySelectorAll(
-    ".section .eyebrow, .section-title, .section-intro, .menu-card, .menu-hint, .contact-form, .footer-col"
+    ".section .eyebrow, .section-title, .section-intro, .photo-card, .deal-banner, .menu-card, .menu-hint, .contact-form, .map-frame, .footer-col"
 );
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -59,9 +59,9 @@ if ("IntersectionObserver" in window && !reduceMotion) {
 
     revealTargets.forEach((el) => {
         // Cards and footer columns that sit side by side come in one after another
-        const siblings = [...el.parentElement.children].filter((child) => child.matches(".menu-card, .footer-col"));
+        const siblings = [...el.parentElement.children].filter((child) => child.matches(".photo-card, .menu-card, .footer-col"));
         const position = siblings.indexOf(el);
-        if (position > 0) el.style.transitionDelay = position * 0.12 + "s";
+        if (position > 0) el.style.transitionDelay = (position % 4) * 0.12 + "s"; // restart every row of 4
 
         el.classList.add("reveal");
         observer.observe(el);
