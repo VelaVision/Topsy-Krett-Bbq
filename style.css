@@ -171,30 +171,37 @@ a {
     transition: all 0.3s ease;
 }
 
+/* Gradients can't animate directly, so each one is drawn twice as wide
+   and slides over on hover to shift the colors smoothly */
 .btn-primary {
-    background-color: var(--red);
     color: #fff;
-    border: 1px solid var(--red);
+    border: 1px solid rgba(255, 120, 60, 0.35);
+    background-image: linear-gradient(120deg, #f0521c 0%, var(--red) 40%, var(--red-dark) 75%, #f0521c 100%);
+    background-size: 220% 100%;
+    background-position: 0% 50%;
     box-shadow: 0 8px 24px rgba(198, 9, 6, 0.35);
 }
 
 .btn-primary:hover {
-    background-color: var(--red-dark);
-    border-color: var(--red-dark);
+    background-position: 100% 50%;
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(198, 9, 6, 0.5);
+    box-shadow: 0 12px 30px rgba(240, 82, 28, 0.45);
 }
 
 .btn-outline {
-    background-color: transparent;
     color: var(--gold-light);
     border: 1px solid var(--gold);
+    background-image: linear-gradient(120deg, rgba(240, 196, 120, 0.16) 0%, rgba(224, 176, 98, 0.02) 45%,
+            var(--gold-light) 55%, #c98a3a 100%);
+    background-size: 240% 100%;
+    background-position: 0% 50%;
 }
 
 .btn-outline:hover {
-    background-color: var(--gold);
     color: var(--black);
+    background-position: 100% 50%;
     transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(224, 176, 98, 0.25);
 }
 
 .btn-small {
