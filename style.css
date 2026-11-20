@@ -162,7 +162,7 @@ a {
 .btn {
     display: inline-block;
     padding: 14px 32px;
-    border-radius: 2px;
+    border-radius: 15px;
     font-family: var(--font-label);
     font-size: 16px;
     letter-spacing: 0.15em;
@@ -179,7 +179,7 @@ a {
     background-image: linear-gradient(120deg, #f0521c 0%, var(--red) 40%, var(--red-dark) 75%, #f0521c 100%);
     background-size: 220% 100%;
     background-position: 0% 50%;
-    box-shadow: 0 8px 24px rgba(198, 9, 6, 0.35);
+    box-shadow: 0 0px 20px white;
 }
 
 .btn-primary:hover {
